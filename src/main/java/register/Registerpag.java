@@ -19,9 +19,8 @@ public class Registerpag {
 
     String SKILLS = "Skills";
 
-    String COUNTRY = "//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span";
-
     String SELECTCOUNTRY = "//*[@id=\"select2-country-results\"]/li[3]";
+    String SELECTCOUNTRY1 = "//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span";
 
     String ANO = "yearbox";
 
@@ -47,7 +46,7 @@ public class Registerpag {
         driver.findElement(By.xpath(ENDEREÇO)).sendKeys(endereco);
     }
 
-    public void preencherEmail(String email) {
+    public void  preencherEmail(String email) {
         driver.findElement(By.xpath(EMAIL)).sendKeys(email);
     }
 
@@ -55,11 +54,11 @@ public class Registerpag {
         driver.findElement(By.xpath(TELEFONE)).sendKeys(telefone);
     }
 
-    public void selecioneGenero(){
+    public void selecioneGenero(String gender){
         driver.findElement(By.xpath(SELEÇAOGENERO)).click();
     }
 
-    public void selecHobbies(){
+    public void selecHobbies(String hobbies){
         driver.findElement(By.xpath(SELECHOBBIES)).click();
     }
 
@@ -67,10 +66,8 @@ public class Registerpag {
         Select skills = new Select(driver.findElement(By.id(SKILLS)));
             skills.selectByVisibleText(Skilss);
     }
-public void seleccountry(){
-        driver.findElement(By.xpath(COUNTRY)).click();
-        }
 public void selecionarseleccountry(){
+        driver.findElement(By.xpath(SELECTCOUNTRY1)).click();
         driver.findElement(By.xpath(SELECTCOUNTRY)).click();
     }
 public void preencherAno(String anos){
